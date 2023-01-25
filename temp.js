@@ -4,15 +4,24 @@
 // @version      0.1
 // @description  hello new world!
 // @author       Innis
-// @match         *://*
+// @match        https://zhihu.com/*
+// @match        https://juejin.cn/*
+// @match        https://www.notion.so/*
 // @icon         https://utoolsfigurebed.oss-cn-hangzhou.aliyuncs.com/logoIcon.png
-// @grant        none
+// @grant        GM_log
+// @grant GM_notification
 // @license      MIT
 // ==/UserScript==
 
 (function () {
     'use strict';
-    console.log('Hello World!');
-    console.log('Hello World! 2');
-    console.log('Hello World! 3');
+    GM_log("Hello World");
+    GM_notification({
+        title: 'Hello World! title',
+        text: 'Hello World! content',
+        timeout: 5000,
+        onclick: function () {
+            GM_log("Hello World2");
+        }
+    });
 })();
